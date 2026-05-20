@@ -1,0 +1,17 @@
+"app_title" = "身長はかーる";
+"app_subtitle" = "AR身長測定";
+"home_desc" = "平らな場所に立っている人にカメラを向けると、ARで身長を測定します。";
+"btn_start_ar" = "測定をはじめる";
+"btn_cancel" = "やめる";
+"btn_save" = "保存";
+"no_ar_message" = "このデバイスはAR身体検出に対応していません。A12チップ以降のiPhoneが必要です。";
+"last_result" = "前回の結果";
+"disclaimer" = "測定値は目安です。正確な身長はメジャーなどで測ってください。";
+"status_no_ar" = "AR非対応";
+"status_scanning" = "床をスキャン中...";
+"status_floor_found" = "床を検出！人に向けてください。";
+"status_person_found" = "人を検出しました！";
+"status_measuring" = "測定中...";
+"history_title" = "測定履歴";
+"history_done" = "完了";
+"history_empty" = "まだ測定記録がありません";

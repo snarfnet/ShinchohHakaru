@@ -1,0 +1,46 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		AA000001 = {isa = PBXBuildFile; fileRef = AB000001; };
+		AA000002 = {isa = PBXBuildFile; fileRef = AB000002; };
+		AA000003 = {isa = PBXBuildFile; fileRef = AB000003; };
+		AA000004 = {isa = PBXBuildFile; fileRef = AB000004; };
+		AA000005 = {isa = PBXBuildFile; fileRef = AB000005; };
+		AA000006 = {isa = PBXBuildFile; fileRef = AB000006; };
+		AA000007 = {isa = PBXBuildFile; fileRef = AB000007; };
+		AA000008 = {isa = PBXBuildFile; productRef = AD000001; };
+		AB000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinchohHakaruApp.swift; sourceTree = "<group>"; };
+		AB000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		AB000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureManager.swift; sourceTree = "<group>"; };
+		AB000005 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightRecord.swift; sourceTree = "<group>"; };
+		AB000006 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobManager.swift; sourceTree = "<group>"; };
+		AB000007 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB000008 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB000020 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShinchohHakaru.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (AA000008); runOnlyForDeploymentPostprocessing = 0; };
+		AC000002 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (AA000001,AA000002,AA000003,AA000004,AA000005,AA000006); runOnlyForDeploymentPostprocessing = 0; };
+		AC000003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (AA000007); runOnlyForDeploymentPostprocessing = 0; };
+		AE000001 = {isa = PBXGroup; children = (AE000002, AE000010); sourceTree = "<group>"; };
+		AE000002 = {isa = PBXGroup; children = (AB000001,AB000002,AE000003,AE000004,AE000005,AE000006,AB000007,AB000008); path = ShinchohHakaru; sourceTree = "<group>"; };
+		AE000003 = {isa = PBXGroup; children = (AB000003); path = Views; sourceTree = "<group>"; };
+		AE000004 = {isa = PBXGroup; children = (AB000004); path = Managers; sourceTree = "<group>"; };
+		AE000005 = {isa = PBXGroup; children = (AB000005); path = Models; sourceTree = "<group>"; };
+		AE000006 = {isa = PBXGroup; children = (AB000006); path = Helpers; sourceTree = "<group>"; };
+		AE000010 = {isa = PBXGroup; children = (AB000020); name = Products; sourceTree = "<group>"; };
+		AF000001 = {isa = PBXNativeTarget; buildConfigurationList = AF000010; buildPhases = (AC000002,AC000001,AC000003); buildRules = (); dependencies = (); name = ShinchohHakaru; packageProductDependencies = (AD000001); productName = ShinchohHakaru; productReference = AB000020; productType = "com.apple.product-type.application"; };
+		AF000002 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 1540; LastUpgradeCheck = 1540;}; buildConfigurationList = AF000020; compatibilityVersion = "Xcode 14.0"; developmentRegion = ja; hasScannedForEncodings = 0; knownRegions = (en,ja,Base); mainGroup = AE000001; packageReferences = (AD000010); productRefGroup = AE000010; projectDirPath = ""; projectRoot = ""; targets = (AF000001); };
+		AF000011 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = ShinchohHakaru/Info.plist; INFOPLIST_KEY_CFBundleDisplayName = "身長はかーる"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities"; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)","@executable_path/Frameworks"); MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.snarfnet.shinchohhakaru; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2";}; name = Debug; };
+		AF000012 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = ShinchohHakaru/Info.plist; INFOPLIST_KEY_CFBundleDisplayName = "身長はかーる"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities"; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)","@executable_path/Frameworks"); MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.snarfnet.shinchohhakaru; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2";}; name = Release; };
+		AF000021 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ANALYZER_NONNULL = YES; CLANG_CXX_LANGUAGE_STANDARD = "gnu++20"; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_STRICT_OBJC_MSGSEND = YES; ENABLE_TESTABILITY = YES; GCC_NO_COMMON_BLOCKS = YES; GCC_OPTIMIZATION_LEVEL = 0; GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR; GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE; ONLY_ACTIVE_ARCH = YES; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; SWIFT_OPTIMIZATION_LEVEL = "-Onone";}; name = Debug; };
+		AF000022 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ANALYZER_NONNULL = YES; CLANG_CXX_LANGUAGE_STANDARD = "gnu++20"; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; ENABLE_STRICT_OBJC_MSGSEND = YES; GCC_NO_COMMON_BLOCKS = YES; GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR; GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; VALIDATE_PRODUCT = YES;}; name = Release; };
+		AF000010 = {isa = XCConfigurationList; buildConfigurations = (AF000011,AF000012); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		AF000020 = {isa = XCConfigurationList; buildConfigurations = (AF000021,AF000022); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		AD000010 = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git"; requirement = {kind = upToNextMajorVersion; minimumVersion = 11.0.0;}; };
+		AD000001 = {isa = XCSwiftPackageProductDependency; package = AD000010; productName = GoogleMobileAds; };
+	};
+	rootObject = AF000002;
+}

@@ -1,0 +1,17 @@
+"app_title" = "Height Measure";
+"app_subtitle" = "AR Body Height Measurement";
+"home_desc" = "Point your camera at a person standing on flat ground to measure their height using AR.";
+"btn_start_ar" = "Start Measuring";
+"btn_cancel" = "Cancel";
+"btn_save" = "Save";
+"no_ar_message" = "This device does not support AR body detection. A newer iPhone with A12 chip or later is required.";
+"last_result" = "Last Result";
+"disclaimer" = "Measurements are approximate. For accurate height measurement, use a proper measuring tool.";
+"status_no_ar" = "AR not available";
+"status_scanning" = "Scanning floor...";
+"status_floor_found" = "Floor detected! Point at a person.";
+"status_person_found" = "Person detected!";
+"status_measuring" = "Measuring...";
+"history_title" = "History";
+"history_done" = "Done";
+"history_empty" = "No measurements yet";
