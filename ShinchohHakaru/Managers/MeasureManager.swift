@@ -22,7 +22,7 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
     // MARK: - AR Session
     func startSession() {
         guard isARAvailable else {
-            statusMessage = String(localized: "status_no_ar")
+            statusMessage = NSLocalizedString("status_no_ar", comment: "")
             return
         }
 
@@ -31,7 +31,6 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
 
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal]
-        config.frameSemantics = .bodyDetection
 
         if ARWorldTrackingConfiguration.supportsFrameSemantics(.bodyDetection) {
             config.frameSemantics.insert(.bodyDetection)
@@ -39,7 +38,7 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
 
         arSession?.run(config)
         isMeasuring = true
-        statusMessage = String(localized: "status_scanning")
+        statusMessage = NSLocalizedString("status_scanning", comment: "")
     }
 
     func stopSession() {
@@ -63,7 +62,7 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
         if planes.contains(where: { $0.classification == .floor || $0.alignment == .horizontal }) {
             if !floorDetected {
                 floorDetected = true
-                statusMessage = String(localized: "status_floor_found")
+                statusMessage = NSLocalizedString("status_floor_found", comment: "")
             }
         }
     }
@@ -72,11 +71,11 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
         for anchor in anchors {
             if let plane = anchor as? ARPlaneAnchor, plane.alignment == .horizontal {
                 floorDetected = true
-                statusMessage = String(localized: "status_floor_found")
+                statusMessage = NSLocalizedString("status_floor_found", comment: "")
             }
             if anchor is ARBodyAnchor {
                 personDetected = true
-                statusMessage = String(localized: "status_person_found")
+                statusMessage = NSLocalizedString("status_person_found", comment: "")
             }
         }
     }
@@ -105,7 +104,7 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
             } else {
                 self.currentHeight = heightCm
             }
-            self.statusMessage = String(localized: "status_measuring")
+            self.statusMessage = NSLocalizedString("status_measuring", comment: "")
         }
     }
 

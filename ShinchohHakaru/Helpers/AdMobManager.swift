@@ -3,21 +3,33 @@ import GoogleMobileAds
 
 class AdMobManager: ObservableObject {
     static let shared = AdMobManager()
-    let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716" // Test ID
-    func configure() { GADMobileAds.sharedInstance().start(completionHandler: nil) }
+    let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
+    func configure() {
+        MobileAds.shared.start()
+    }
 }
 
-struct BannerAdView: UIViewRepresentable {
+struct BannerAdView: UIViewControllerRepresentable {
     let adUnitID: String
-    func makeUIView(context: Context) -> GADBannerView {
-        let banner = GADBannerView(adSize: GADAdSizeBanner)
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        let controller = UIViewController()
+        controller.view.backgroundColor = .clear
+
+        let banner = BannerView(adSize: AdSizeBanner)
         banner.adUnitID = adUnitID
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let rootVC = windowScene.windows.first?.rootViewController {
-            banner.rootViewController = rootVC
-        }
-        banner.load(GADRequest())
-        return banner
+        banner.rootViewController = controller
+        banner.translatesAutoresizingMaskIntoConstraints = false
+
+        controller.view.addSubview(banner)
+        NSLayoutConstraint.activate([
+            banner.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor),
+            banner.centerYAnchor.constraint(equalTo: controller.view.centerYAnchor)
+        ])
+
+        banner.load(Request())
+        return controller
     }
-    func updateUIView(_ uiView: GADBannerView, context: Context) {}
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }

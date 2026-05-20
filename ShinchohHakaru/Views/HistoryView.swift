@@ -10,7 +10,7 @@ struct HistoryView: View {
                 Color(red: 0.97, green: 0.97, blue: 0.98).ignoresSafeArea()
 
                 if mm.history.isEmpty {
-                    Text(String(localized: "history_empty"))
+                    Text(NSLocalizedString("history_empty", comment: ""))
                         .font(.system(size: 16, design: .rounded))
                         .foregroundColor(.gray)
                 } else {
@@ -56,11 +56,11 @@ struct HistoryView: View {
                     }
                 }
             }
-            .navigationTitle(String(localized: "history_title"))
+            .navigationTitle(NSLocalizedString("history_title", comment: ""))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(String(localized: "history_done")) { dismiss() }
+                    Button(NSLocalizedString("history_done", comment: "")) { dismiss() }
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                 }
             }

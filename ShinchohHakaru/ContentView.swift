@@ -36,10 +36,10 @@ struct ContentView: View {
     private var header: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
-                Text(String(localized: "app_title"))
+                Text(NSLocalizedString("app_title", comment: ""))
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundColor(Color(red: 0.2, green: 0.3, blue: 0.5))
-                Text(String(localized: "app_subtitle"))
+                Text(NSLocalizedString("app_subtitle", comment: ""))
                     .font(.system(size: 12, design: .rounded))
                     .foregroundColor(.gray)
             }
@@ -67,7 +67,7 @@ struct ContentView: View {
                 .foregroundColor(Color(red: 0.3, green: 0.5, blue: 0.9))
                 .rotationEffect(.degrees(90))
 
-            Text(String(localized: "home_desc"))
+            Text(NSLocalizedString("home_desc", comment: ""))
                 .font(.system(size: 15, design: .rounded))
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
@@ -81,7 +81,7 @@ struct ContentView: View {
                     HStack(spacing: 10) {
                         Image(systemName: "camera.fill")
                             .font(.system(size: 20))
-                        Text(String(localized: "btn_start_ar"))
+                        Text(NSLocalizedString("btn_start_ar", comment: ""))
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                     }
                     .foregroundColor(.white)
@@ -100,7 +100,7 @@ struct ContentView: View {
                     Image(systemName: "exclamationmark.triangle")
                         .font(.system(size: 30))
                         .foregroundColor(.orange)
-                    Text(String(localized: "no_ar_message"))
+                    Text(NSLocalizedString("no_ar_message", comment: ""))
                         .font(.system(size: 14, design: .rounded))
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
@@ -111,7 +111,7 @@ struct ContentView: View {
             // Last result
             if let last = mm.history.last {
                 VStack(spacing: 4) {
-                    Text(String(localized: "last_result"))
+                    Text(NSLocalizedString("last_result", comment: ""))
                         .font(.system(size: 12, design: .rounded))
                         .foregroundColor(.gray)
                     Text(last.heightText)
@@ -129,7 +129,7 @@ struct ContentView: View {
 
             Spacer()
 
-            Text(String(localized: "disclaimer"))
+            Text(NSLocalizedString("disclaimer", comment: ""))
                 .font(.system(size: 10, design: .rounded))
                 .foregroundColor(.gray.opacity(0.4))
                 .multilineTextAlignment(.center)
@@ -192,7 +192,7 @@ struct ContentView: View {
                 } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "xmark")
-                        Text(String(localized: "btn_cancel"))
+                        Text(NSLocalizedString("btn_cancel", comment: ""))
                     }
                     .font(.system(size: 16, weight: .bold, design: .rounded))
                     .foregroundColor(.red)
@@ -210,7 +210,7 @@ struct ContentView: View {
                     } label: {
                         HStack(spacing: 6) {
                             Image(systemName: "checkmark")
-                            Text(String(localized: "btn_save"))
+                            Text(NSLocalizedString("btn_save", comment: ""))
                         }
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
