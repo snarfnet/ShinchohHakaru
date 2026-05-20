@@ -16,7 +16,7 @@ struct BannerAdView: UIViewControllerRepresentable {
         let controller = UIViewController()
         controller.view.backgroundColor = .clear
 
-        let banner = BannerView(adSize: AdSizeBanner)
+        let banner = GADBannerView(adSize: GADAdSizeBanner)
         banner.adUnitID = adUnitID
         banner.rootViewController = controller
         banner.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ struct BannerAdView: UIViewControllerRepresentable {
             banner.centerYAnchor.constraint(equalTo: controller.view.centerYAnchor)
         ])
 
-        banner.load(Request())
+        banner.load(GADRequest())
         return controller
     }
 
