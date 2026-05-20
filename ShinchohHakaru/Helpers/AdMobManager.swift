@@ -5,7 +5,7 @@ class AdMobManager: ObservableObject {
     static let shared = AdMobManager()
     let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
     func configure() {
-        MobileAds.shared.start()
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 }
 
