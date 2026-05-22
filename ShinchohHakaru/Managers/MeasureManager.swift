@@ -11,11 +11,11 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
     @Published var statusMessage = ""
     @Published var history: [HeightRecord] = []
 
-    private var arSession: ARSession?
+    @Published private(set) var arSession: ARSession?
 
     override init() {
         super.init()
-        isARAvailable = ARWorldTrackingConfiguration.isSupported
+        isARAvailable = ARBodyTrackingConfiguration.isSupported || ARWorldTrackingConfiguration.isSupported
         loadHistory()
     }
 
@@ -26,18 +26,27 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
             return
         }
 
-        arSession = ARSession()
-        arSession?.delegate = self
+        let session = ARSession()
+        session.delegate = self
 
-        let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.horizontal]
-
-        if ARWorldTrackingConfiguration.supportsFrameSemantics(.bodyDetection) {
-            config.frameSemantics.insert(.bodyDetection)
+        if ARBodyTrackingConfiguration.isSupported {
+            // Use body tracking config for reliable body detection
+            let config = ARBodyTrackingConfiguration()
+            config.planeDetection = [.horizontal]
+            session.run(config, options: [.resetTracking, .removeExistingAnchors])
+        } else {
+            // Fallback to world tracking with body detection frame semantics
+            let config = ARWorldTrackingConfiguration()
+            config.planeDetection = [.horizontal]
+            if ARWorldTrackingConfiguration.supportsFrameSemantics(.bodyDetection) {
+                config.frameSemantics.insert(.bodyDetection)
+            }
+            session.run(config, options: [.resetTracking, .removeExistingAnchors])
         }
 
-        arSession?.run(config)
+        arSession = session
         isMeasuring = true
+        currentHeight = nil
         statusMessage = NSLocalizedString("status_scanning", comment: "")
     }
 

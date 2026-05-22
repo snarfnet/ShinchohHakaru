@@ -1,5 +1,6 @@
 import SwiftUI
 import ARKit
+import AVFoundation
 
 struct ContentView: View {
     @EnvironmentObject var mm: MeasureManager
@@ -76,7 +77,13 @@ struct ContentView: View {
             if mm.isARAvailable {
                 // AR mode
                 Button {
-                    mm.startSession()
+                    AVCaptureDevice.requestAccess(for: .video) { granted in
+                        DispatchQueue.main.async {
+                            if granted {
+                                mm.startSession()
+                            }
+                        }
+                    }
                 } label: {
                     HStack(spacing: 10) {
                         Image(systemName: "camera.fill")
@@ -141,9 +148,9 @@ struct ContentView: View {
     // MARK: - Measure View
     private var measureView: some View {
         VStack(spacing: 20) {
-            // AR Camera view placeholder
+            // AR Camera feed
             ZStack {
-                ARViewContainer()
+                ARViewContainer(session: mm.arSession)
                     .cornerRadius(20)
                     .padding(.horizontal, 16)
 
@@ -229,6 +236,8 @@ struct ContentView: View {
 
 // MARK: - AR View
 struct ARViewContainer: UIViewRepresentable {
+    var session: ARSession?
+
     func makeUIView(context: Context) -> ARSCNView {
         let view = ARSCNView()
         view.automaticallyUpdatesLighting = true
@@ -236,13 +245,9 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: ARSCNView, context: Context) {
-        if uiView.session.configuration == nil {
-            let config = ARWorldTrackingConfiguration()
-            config.planeDetection = [.horizontal]
-            if ARWorldTrackingConfiguration.supportsFrameSemantics(.bodyDetection) {
-                config.frameSemantics.insert(.bodyDetection)
-            }
-            uiView.session.run(config)
+        guard let session = session else { return }
+        if uiView.session !== session {
+            uiView.session = session
         }
     }
 }
