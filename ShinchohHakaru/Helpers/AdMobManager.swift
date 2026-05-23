@@ -3,7 +3,7 @@ import GoogleMobileAds
 
 class AdMobManager: ObservableObject {
     static let shared = AdMobManager()
-    let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
+    let bannerAdUnitID = "ca-app-pub-9404799280370656/2948905613"
     func configure() {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
