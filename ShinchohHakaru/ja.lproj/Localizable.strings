@@ -4,7 +4,7 @@
 "btn_start_ar" = "測定をはじめる";
 "btn_cancel" = "やめる";
 "btn_save" = "保存";
-"no_ar_message" = "このデバイスはAR身体検出に対応していません。A12チップ以降のiPhoneが必要です。";
+"no_ar_message" = "このデバイスはAR身体検出に対応していません。\niPhone XS以降のiPhoneでご利用ください。\niPadでは身体トラッキング機能を利用できません。";
 "last_result" = "前回の結果";
 "disclaimer" = "測定値は目安です。正確な身長はメジャーなどで測ってください。";
 "status_no_ar" = "AR非対応";

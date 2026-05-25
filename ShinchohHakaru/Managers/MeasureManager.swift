@@ -15,7 +15,8 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
 
     override init() {
         super.init()
-        isARAvailable = ARBodyTrackingConfiguration.isSupported || ARWorldTrackingConfiguration.isSupported
+        // Body tracking is required for height measurement - only supported on iPhone with A12+
+        isARAvailable = ARBodyTrackingConfiguration.isSupported
         loadHistory()
     }
 
@@ -29,20 +30,9 @@ class MeasureManager: NSObject, ObservableObject, ARSessionDelegate {
         let session = ARSession()
         session.delegate = self
 
-        if ARBodyTrackingConfiguration.isSupported {
-            // Use body tracking config for reliable body detection
-            let config = ARBodyTrackingConfiguration()
-            config.planeDetection = [.horizontal]
-            session.run(config, options: [.resetTracking, .removeExistingAnchors])
-        } else {
-            // Fallback to world tracking with body detection frame semantics
-            let config = ARWorldTrackingConfiguration()
-            config.planeDetection = [.horizontal]
-            if ARWorldTrackingConfiguration.supportsFrameSemantics(.bodyDetection) {
-                config.frameSemantics.insert(.bodyDetection)
-            }
-            session.run(config, options: [.resetTracking, .removeExistingAnchors])
-        }
+        let config = ARBodyTrackingConfiguration()
+        config.planeDetection = [.horizontal]
+        session.run(config, options: [.resetTracking, .removeExistingAnchors])
 
         arSession = session
         isMeasuring = true

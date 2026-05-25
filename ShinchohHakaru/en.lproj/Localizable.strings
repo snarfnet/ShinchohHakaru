@@ -4,7 +4,7 @@
 "btn_start_ar" = "Start Measuring";
 "btn_cancel" = "Cancel";
 "btn_save" = "Save";
-"no_ar_message" = "This device does not support AR body detection. A newer iPhone with A12 chip or later is required.";
+"no_ar_message" = "This device does not support AR body detection.\nPlease use an iPhone XS or later.\nBody tracking is not available on iPad.";
 "last_result" = "Last Result";
 "disclaimer" = "Measurements are approximate. For accurate height measurement, use a proper measuring tool.";
 "status_no_ar" = "AR not available";
