@@ -46,8 +46,8 @@ private extension UIApplication {
     var topViewController: UIViewController? {
         connectedScenes
             .compactMap { $0 as? UIWindowScene }
-            .flatMap(\.windows)
-            .first { $0.isKeyWindow }?
+            .first?
+            .keyWindow?
             .rootViewController
     }
 }
