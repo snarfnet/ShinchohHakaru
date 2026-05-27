@@ -5,31 +5,49 @@ class AdMobManager: ObservableObject {
     static let shared = AdMobManager()
     let bannerAdUnitID = "ca-app-pub-9404799280370656/2948905613"
     func configure() {
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        MobileAds.shared.start()
     }
 }
 
-struct BannerAdView: UIViewControllerRepresentable {
+struct BannerAdView: View {
     let adUnitID: String
 
-    func makeUIViewController(context: Context) -> UIViewController {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .clear
+    var body: some View {
+        GeometryReader { proxy in
+            let width = max(proxy.size.width, 320)
+            let adSize = currentOrientationAnchoredAdaptiveBanner(width: width)
+            BannerViewContainer(adUnitID: adUnitID, adSize: adSize)
+                .frame(width: adSize.size.width, height: adSize.size.height)
+                .frame(maxWidth: .infinity)
+        }
+        .frame(height: 64)
+    }
+}
 
-        let banner = GADBannerView(adSize: GADAdSizeBanner)
+private struct BannerViewContainer: UIViewRepresentable {
+    let adUnitID: String
+    let adSize: AdSize
+
+    func makeUIView(context: Context) -> BannerView {
+        let banner = BannerView(adSize: adSize)
         banner.adUnitID = adUnitID
-        banner.rootViewController = controller
-        banner.translatesAutoresizingMaskIntoConstraints = false
-
-        controller.view.addSubview(banner)
-        NSLayoutConstraint.activate([
-            banner.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor),
-            banner.centerYAnchor.constraint(equalTo: controller.view.centerYAnchor)
-        ])
-
-        banner.load(GADRequest())
-        return controller
+        banner.rootViewController = UIApplication.shared.topViewController
+        banner.load(Request())
+        return banner
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    func updateUIView(_ uiView: BannerView, context: Context) {
+        uiView.adSize = adSize
+        uiView.rootViewController = UIApplication.shared.topViewController
+    }
+}
+
+private extension UIApplication {
+    var topViewController: UIViewController? {
+        connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap(\.windows)
+            .first { $0.isKeyWindow }?
+            .rootViewController
+    }
 }

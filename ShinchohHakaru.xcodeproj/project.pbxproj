@@ -39,7 +39,7 @@
 		AF000022 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ANALYZER_NONNULL = YES; CLANG_CXX_LANGUAGE_STANDARD = "gnu++20"; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; ENABLE_STRICT_OBJC_MSGSEND = YES; GCC_NO_COMMON_BLOCKS = YES; GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR; GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; VALIDATE_PRODUCT = YES;}; name = Release; };
 		AF000010 = {isa = XCConfigurationList; buildConfigurations = (AF000011,AF000012); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 		AF000020 = {isa = XCConfigurationList; buildConfigurations = (AF000021,AF000022); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		AD000010 = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git"; requirement = {kind = upToNextMajorVersion; minimumVersion = 11.0.0;}; };
+		AD000010 = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git"; requirement = {kind = upToNextMajorVersion; minimumVersion = 12.0.0;}; };
 		AD000001 = {isa = XCSwiftPackageProductDependency; package = AD000010; productName = GoogleMobileAds; };
 	};
 	rootObject = AF000002;
