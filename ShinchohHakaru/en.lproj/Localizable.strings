@@ -15,3 +15,24 @@
 "history_title" = "History";
 "history_done" = "Done";
 "history_empty" = "No measurements yet";
+
+/* Manual Height Calculator (iPad fallback) */
+"btn_manual_calc" = "Height Calculator";
+"manual_title" = "Height & BMI Calculator";
+"manual_subtitle" = "Enter your height and weight for conversions and BMI";
+"manual_height_label" = "Height";
+"manual_weight_label" = "Weight";
+"unit_ft_in" = "Feet / Inches";
+"unit_meters" = "Meters";
+"unit_pounds" = "Pounds";
+"unit_stone" = "Stone";
+"bmi_underweight" = "Underweight";
+"bmi_normal" = "Normal";
+"bmi_overweight" = "Overweight";
+"bmi_obese" = "Obese";
+"chart_title" = "Height Comparison";
+"chart_child" = "Child";
+"chart_avg_female" = "Avg Female";
+"chart_avg_male" = "Avg Male";
+"chart_tall" = "Tall";
+"chart_you" = "You";

@@ -15,3 +15,24 @@
 "history_title" = "測定履歴";
 "history_done" = "完了";
 "history_empty" = "まだ測定記録がありません";
+
+/* Manual Height Calculator (iPad fallback) */
+"btn_manual_calc" = "身長計算ツール";
+"manual_title" = "身長・BMI計算ツール";
+"manual_subtitle" = "身長と体重を入力して換算・BMIを計算します";
+"manual_height_label" = "身長";
+"manual_weight_label" = "体重";
+"unit_ft_in" = "フィート/インチ";
+"unit_meters" = "メートル";
+"unit_pounds" = "ポンド";
+"unit_stone" = "ストーン";
+"bmi_underweight" = "低体重";
+"bmi_normal" = "普通体重";
+"bmi_overweight" = "肥満(1度)";
+"bmi_obese" = "肥満(2度以上)";
+"chart_title" = "身長比較チャート";
+"chart_child" = "子供";
+"chart_avg_female" = "女性平均";
+"chart_avg_male" = "男性平均";
+"chart_tall" = "高身長";
+"chart_you" = "あなた";
