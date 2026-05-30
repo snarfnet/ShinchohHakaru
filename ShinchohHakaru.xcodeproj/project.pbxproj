@@ -13,6 +13,7 @@
 		AA000007 = {isa = PBXBuildFile; fileRef = AB000007; };
 		AA000008 = {isa = PBXBuildFile; productRef = AD000001; };
 		AA000030 = {isa = PBXBuildFile; fileRef = AB000032; };
+		AA000040 = {isa = PBXBuildFile; fileRef = AB000042; };
 		AB000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinchohHakaruApp.swift; sourceTree = "<group>"; };
 		AB000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -25,11 +26,14 @@
 		AB000030 = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB000031 = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB000032 = {isa = PBXVariantGroup; children = (AB000030,AB000031); name = Localizable.strings; sourceTree = "<group>"; };
+		AB000040 = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB000041 = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB000042 = {isa = PBXVariantGroup; children = (AB000040,AB000041); name = InfoPlist.strings; sourceTree = "<group>"; };
 		AC000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (AA000008); runOnlyForDeploymentPostprocessing = 0; };
 		AC000002 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (AA000001,AA000002,AA000003,AA000004,AA000005,AA000006); runOnlyForDeploymentPostprocessing = 0; };
-		AC000003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (AA000007,AA000030); runOnlyForDeploymentPostprocessing = 0; };
+		AC000003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (AA000007,AA000030,AA000040); runOnlyForDeploymentPostprocessing = 0; };
 		AE000001 = {isa = PBXGroup; children = (AE000002, AE000010); sourceTree = "<group>"; };
-		AE000002 = {isa = PBXGroup; children = (AB000001,AB000002,AE000003,AE000004,AE000005,AE000006,AB000007,AB000008,AB000032); path = ShinchohHakaru; sourceTree = "<group>"; };
+		AE000002 = {isa = PBXGroup; children = (AB000001,AB000002,AE000003,AE000004,AE000005,AE000006,AB000007,AB000008,AB000032,AB000042); path = ShinchohHakaru; sourceTree = "<group>"; };
 		AE000003 = {isa = PBXGroup; children = (AB000003); path = Views; sourceTree = "<group>"; };
 		AE000004 = {isa = PBXGroup; children = (AB000004); path = Managers; sourceTree = "<group>"; };
 		AE000005 = {isa = PBXGroup; children = (AB000005); path = Models; sourceTree = "<group>"; };
